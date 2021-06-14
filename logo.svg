@@ -1,7 +1,7 @@
 <svg viewBox="0 0 240 80" xmlns="http://www.w3.org/2000/svg">
   <style>
     .colors { 
-        fill: linear-gradient(
+        background: -webkit-linear-gradient(
             90deg,
             #5865F2 17%,
             #57F287 33%,
@@ -9,7 +9,9 @@
             #EC4596 65%,
             #ED4249 81%,
             #DCDCDC 93%
-        )
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
   </style>
 
