@@ -1,0 +1,26 @@
+body{
+    animation: muitasCores 10s infinite;
+}
+
+@keyframes muitasCores{
+    0%{background-color: #5865F2;}
+    17%{background-color: #57F287;}
+    33%{background-color: #FEE75C;}
+    49%{background-color: #EC4596;}
+    65%{background-color: #ED4249;}
+    81%{background-color: #DCDCDC;}
+    95%{background-color: #23272A;}
+    100%{background-color: #5865F2;}
+}
+
+.nome{
+    color: black;
+    text-transform: uppercase;
+}
+
+div{
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
