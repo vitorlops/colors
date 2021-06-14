@@ -2,7 +2,7 @@
   <defs>
     <style>
       .cls-1 {
-        font-size: 122.4px;
+        font-size: 2rem;
         fill: linear-gradient(
           90deg,
           #5865F2 17%,
