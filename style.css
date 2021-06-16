@@ -1,16 +1,55 @@
+*{
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'Alliance';
+    src: url(alliance.otf) format('opentype');
+}
+
 body{
+    font-family: 'Alliance', sans-serif;
+    font-weight: bold;
     animation: muitasCores 10s infinite;
 }
 
-@keyframes muitasCores{
-    0%{background-color: #5865F2;}
-    17%{background-color: #57F287;}
-    33%{background-color: #FEE75C;}
-    49%{background-color: #EC4596;}
-    65%{background-color: #ED4249;}
-    81%{background-color: #DCDCDC;}
-    95%{background-color: #23272A;}
-    100%{background-color: #5865F2;}
+.content{
+    display: inline-block;
+    padding: 20px;
+    background: rgba(255,255,255,0.25);
+    width: 275px;
+    border-radius: 0 0 10px 0;
+}
+
+.input-content{
+    display: inline-block;
+}
+
+label{
+    display: block;
+    margin: 0 0 8px 0;
+}
+
+#input{
+    border: none;
+    background: rgba(0,0,0,0.25);
+    border-radius: 4px;
+    height: 20px;
+    width: 137px;
+}
+#input:focus{
+    outline: none;
+}
+
+#botao{
+    text-transform: uppercase;
+    font-weight: 1000;
+    position: absolute;
+    border: none;
+    background: #5865F2;
+    border-radius: 8px;
+    padding: 16px 30px 16px 30px;
+    margin: 3px 0 0 10px;
 }
 
 li{
@@ -25,4 +64,15 @@ li{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@keyframes muitasCores{
+    0%{background-color: #5865F2;}
+    17%{background-color: #57F287;}
+    33%{background-color: #FEE75C;}
+    49%{background-color: #EC4596;}
+    65%{background-color: #ED4249;}
+    81%{background-color: #DCDCDC;}
+    95%{background-color: #23272A;}
+    100%{background-color: #5865F2;}
 }
