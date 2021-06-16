@@ -13,13 +13,15 @@ body{
     100%{background-color: #5865F2;}
 }
 
-.nome{
+li{
+    list-style-type: none;
     color: black;
     text-transform: uppercase;
+    margin: 0 10px 0 10px;
 }
 
-div{
-    margin-top: 200px;
+.nicks{
+    padding: 100px;
     display: flex;
     justify-content: center;
     align-items: center;

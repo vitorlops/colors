@@ -11,57 +11,28 @@ var firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-const nick_database = {};
+/*logica de pegar o valor do input,mandar para o bando de dados e mostrar na tela*/
+const botao = document.querySelector('#botao');
+const input = document.querySelector('#input');
+const nicksContent = document.querySelector('.nicks');
 
-let user_id = false;
+botao.addEventListener('click', function(){
+    create(input.value);
+});
 
-function new_nick(nick){
+function create(nick){
     const nick_data = {
         nick: nick
     }
 
-    if(!user_id){
-        user_id = firebase.database().ref().child('nicks').push().key;
-    }
-
-    let updates = {};
-    updates['/nicks/' + user_id] = nick_data;
-
-    let nick_ref = firebase.database().ref();
-    nick_ref.update(updates)
-        .then(function(){
-            return {success: true, message: 'Nick created'};
-        })
-        .catch(function(){
-            return {success: false, message: 'Creation failed'};
-        });
+    return firebase.database().ref().child('nicks').push(nick_data);
 }
 
-function remove_nick(){
-    if(!user_id) return {success: false, message: 'Invalid nick'};
-
-    let nick_ref = firebase.database().ref('/nicks/' + user_id);
-    nick_ref.remove()
-        .then(function(){
-            return {success: true, message: 'Nick removed'};
-        })
-        .catch(function(){
-            return {success: false, message: 'Remove failed'};
-        });
-}
-
-nick_database.new = new_nick;
-nick_database.remove = remove_nick;
-
-/*logica de pegar o valor do input e mostrar na tela*/
-const botao = document.querySelector('#botao');
-
-botao.addEventListener('click', function(){
-    const nome = document.querySelector('#nome');
-
-    const input = document.querySelector('#input');
-    const inputValue = input.value;
-    
-    const nomeCenter = nome.innerHTML = inputValue
-    nomeCenter.classList.add('.nome')
-});
+firebase.database().ref('nicks').on('value', function(snapshot){
+    nicksContent.innerHTML = '';
+    snapshot.forEach(function(item){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(item.val().nick));
+        nicksContent.appendChild(li);
+    })
+})
