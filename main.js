@@ -11,13 +11,14 @@ var firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-/*logica de pegar o valor do input,mandar para o bando de dados e mostrar na tela*/
+/*logica de pegar o valor do input, mandar para o bando de dados e mostrar na tela*/
 const botao = document.querySelector('#botao');
 const input = document.querySelector('#input');
 const nicksContent = document.querySelector('.nicks');
 
 botao.addEventListener('click', function(){
     create(input.value);
+    input.value = '';
 });
 
 function create(nick){

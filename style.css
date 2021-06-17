@@ -10,11 +10,11 @@
 body{
     font-family: 'Alliance', sans-serif;
     font-weight: bold;
-    animation: muitasCores 10s infinite;
+    animation: muitasCoresFundo 10s infinite;
 }
 
 .content{
-    display: inline-block;
+    display: flex;
     padding: 20px;
     background: rgba(255,255,255,0.25);
     width: 275px;
@@ -35,7 +35,7 @@ label{
     background: rgba(0,0,0,0.25);
     border-radius: 4px;
     height: 20px;
-    width: 137px;
+    width: 139px;
 }
 #input:focus{
     outline: none;
@@ -44,35 +44,52 @@ label{
 #botao{
     text-transform: uppercase;
     font-weight: 1000;
-    position: absolute;
     border: none;
     background: #5865F2;
     border-radius: 8px;
     padding: 16px 30px 16px 30px;
-    margin: 3px 0 0 10px;
+    margin: 3px 0 0 18px;
 }
 
 li{
     list-style-type: none;
-    color: black;
+    animation: muitasCoresTexto 10s infinite;
     text-transform: uppercase;
-    margin: 0 10px 0 10px;
+    margin: 0 10px 10px 10px;
 }
 
 .nicks{
-    padding: 100px;
+    padding: 32px 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-@keyframes muitasCores{
+@keyframes muitasCoresFundo{
     0%{background-color: #5865F2;}
     17%{background-color: #57F287;}
     33%{background-color: #FEE75C;}
-    49%{background-color: #EC4596;}
+    49%{background-color: #a41de2;}
     65%{background-color: #ED4249;}
     81%{background-color: #DCDCDC;}
     95%{background-color: #23272A;}
     100%{background-color: #5865F2;}
+}
+@keyframes muitasCoresTexto{
+    0%{color: #FEE75C;}
+    17%{color: #23272A;}
+    49%{color: #DCDCDC;}
+    65%{color: #57F287;}
+    81%{color: #EC4596;}
+    100%{color: #FEE75C;}
+}
+
+@media screen and (max-width: 426px){
+    .content{
+        width: calc(100vw - 40px);
+        border-radius: 0;
+        justify-content: center;
+    }
 }
