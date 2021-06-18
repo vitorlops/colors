@@ -3,13 +3,12 @@
 }
 
 @font-face {
-    font-family: 'Alliance';
-    src: url(alliance.otf) format('opentype');
+    font-family: 'Ginto-Nord';
+    src: url(ginto_nord-medium.otf) format('opentype');
 }
 
 body{
-    font-family: 'Alliance', sans-serif;
-    font-weight: bold;
+    font-family: 'Ginto-Nord', sans-serif;
     animation: muitasCoresFundo 10s infinite;
 }
 
@@ -17,7 +16,7 @@ body{
     display: flex;
     padding: 20px;
     background: rgba(255,255,255,0.25);
-    width: 275px;
+    width: 310px;
     border-radius: 0 0 10px 0;
 }
 
@@ -35,7 +34,7 @@ label{
     background: rgba(0,0,0,0.25);
     border-radius: 4px;
     height: 20px;
-    width: 139px;
+    width: 170px;
 }
 #input:focus{
     outline: none;
@@ -68,24 +67,27 @@ li{
 }
 
 @keyframes muitasCoresFundo{
-    0%{background-color: #5865F2;}
-    17%{background-color: #57F287;}
-    33%{background-color: #FEE75C;}
-    49%{background-color: #a41de2;}
-    65%{background-color: #ED4249;}
-    81%{background-color: #DCDCDC;}
-    95%{background-color: #23272A;}
-    100%{background-color: #5865F2;}
+    0%{background: #23272A;}
+    16%{background: #5865F2;}
+    32%{background: #EB459E;}
+    48%{background: #FEE75C;}
+    64%{background: #57F287;}
+    80%{background: #ED4245;}
+    100%{background: #23272A;}
 }
 @keyframes muitasCoresTexto{
-    0%{color: #FEE75C;}
-    17%{color: #23272A;}
-    49%{color: #DCDCDC;}
-    65%{color: #57F287;}
-    81%{color: #EC4596;}
-    100%{color: #FEE75C;}
+    0%{color: #FFFFFF;}
+    32%{color: #FFFFFF;}
+    48%{color: #5865F2;}
+    80%{color: #FFFFFF;}
+    100%{color: #FFFFFF;}
 }
 
+@media screen and (max-width: 320px){
+    label{
+        font-size: 0.99rem;
+    }
+}
 @media screen and (max-width: 426px){
     .content{
         width: calc(100vw - 40px);
