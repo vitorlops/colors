@@ -11,14 +11,22 @@ var firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
-/*logica de pegar o valor do input, mandar para o bando de dados e mostrar na tela*/
+/*logica de pegar o valor do input, mandar para o bando de dados (nao manda de o input nao tiver valor) e mostrar na tela*/
 const botao = document.querySelector('#botao');
 const input = document.querySelector('#input');
 const nicksContent = document.querySelector('.nicks');
+const isEmpty = str => !str.trim().length;
 
 botao.addEventListener('click', function(){
-    create(input.value);
-    input.value = '';
+    if(isEmpty(input.value)){
+        botao.classList.remove('botao-empty');
+        void botao.offsetWidth;
+        botao.classList.add('botao-empty');
+        return
+    }else{
+        create(input.value);
+        input.value = '';
+    }
 });
 
 function create(nick){

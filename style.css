@@ -49,6 +49,9 @@ label{
     padding: 16px 30px 16px 30px;
     margin: 3px 0 0 18px;
 }
+.botao-empty{
+    animation: is-empty 1s ease-in-out;
+}
 
 li{
     list-style-type: none;
@@ -81,6 +84,11 @@ li{
     48%{color: #5865F2;}
     80%{color: #FFFFFF;}
     100%{color: #FFFFFF;}
+}
+@keyframes is-empty{
+    from{
+        background: #ED4245;
+    }
 }
 
 @media screen and (max-width: 320px){
