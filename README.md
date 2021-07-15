@@ -1,4 +1,4 @@
-# Colors :rainbow:
+# colors
 #### The goal of the project is:
 User will put his name in the input field and when he sends his name, it will appear on the page and not only for him, but for everyone who enters the site, and user will be able to add their names, thus the site will be full of names.
 #### Technologies used:
